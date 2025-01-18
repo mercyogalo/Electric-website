@@ -56,7 +56,7 @@ Table OF Contents
 \*----------------------------*/
 :root{
   --secondary-color: #2454D4;
-  --primary-color:
+  --primary-color:#F3F6FB;
 }
 
 body {
@@ -486,7 +486,7 @@ textarea.input {
 .header-search form .search-btn {
   height: 40px;
   width: 100px;
-  background: #D10024;
+  background: var(--secondary-color);
   color: #FFF;
   font-weight: 700;
   border: none;
