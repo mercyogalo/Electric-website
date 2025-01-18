@@ -54,6 +54,10 @@ Table OF Contents
 /*----------------------------*\
 	Typography
 \*----------------------------*/
+:root{
+  --secondary-color: #2454D4;
+  --primary-color:
+}
 
 body {
   font-family: 'Montserrat', sans-serif;

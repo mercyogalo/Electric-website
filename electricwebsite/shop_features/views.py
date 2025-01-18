@@ -13,3 +13,7 @@ def product(request):
 
 def checkout(request):
     return render(request,'checkout.html')
+
+
+def laptop(request):
+    return render(request,'laptop.html')
