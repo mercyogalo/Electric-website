@@ -59,6 +59,7 @@
   :root{
     --secondary-color: #2454D4;
     --primary-color:#F3F6FB;
+    --default-color:#FFF;
   }
   
   body {
@@ -416,12 +417,7 @@
     Top header
   \*----------------------------*/
   
-  #top-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: black;
-
-  }
+ 
   
   .header-links li {
     display: inline-block;
@@ -453,7 +449,7 @@
   #header {
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: black;
+    background-color:  var(--secondary-color);
   }
   
   .header-logo {
@@ -766,7 +762,6 @@
     padding: 60px 0px;
     margin: 30px 0px;
     background-color: #E4E7ED;
-    background-image: url('../img/hotdeal.png');
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -836,6 +831,7 @@
     box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
+    background-color:var(--primary-color)
   }
   
   .product:hover {
@@ -928,22 +924,7 @@
     z-index: 10;
   }
   
-  .product .product-body .product-rating>i.fa-star {
-    color: #ef233c;
-  }
-  
-  .product .product-body .product-rating:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    height: 1px;
-    background-color: #E4E7ED;
-  }
+ 
   
   .product .product-body .product-btns>button {
     position: relative;
@@ -962,70 +943,12 @@
     border-radius: 50%;
   }
   
-  .product .product-body .product-btns>button .tooltipp {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -15px);
-    -ms-transform: translate(-50%, -15px);
-    transform: translate(-50%, -15px);
-    width: 150px;
-    padding: 10px;
-    font-size: 12px;
-    line-height: 10px;
-    background: #1e1f29;
-    color: #FFF;
-    text-transform: uppercase;
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
-  }
+
+
   
-  .product .product-body .product-btns>button:hover .tooltipp {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate(-50%, -5px);
-    -ms-transform: translate(-50%, -5px);
-    transform: translate(-50%, -5px);
-  }
+ 
   
-  .product .add-to-cart {
-    position: absolute;
-    left: 1px;
-    right: 1px;
-    bottom: 1px;
-    padding: 15px;
-    background: #1e1f29;
-    text-align: center;
-    -webkit-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
-    z-index: 2;
-  }
-  
-  .product:hover .add-to-cart {
-    -webkit-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-  
-  .product .add-to-cart .add-to-cart-btn {
-    position: relative;
-    border: 2px solid transparent;
-    height: 40px;
-    padding: 0 30px;
-    background-color: #ef233c;
-    color: #FFF;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-radius: 40px;
-    -webkit-transition: 0.2s all;
-    transition: 0.2s all;
-  }
+ 
   
   .product .add-to-cart .add-to-cart-btn>i {
     position: absolute;
@@ -1036,20 +959,11 @@
     line-height: 38px;
     color: var( --secondary-color);
     opacity: 0;
-    visibility: hidden;
   }
   
-  .product .add-to-cart .add-to-cart-btn:hover {
-    background-color: #FFF;
-    color: var( --secondary-color);
-    border-color: var( --secondary-color);
-    padding: 0px 30px 0px 50px;
-  }
+ 
   
-  .product .add-to-cart .add-to-cart-btn:hover>i {
-    opacity: 1;
-    visibility: visible;
-  }
+ 
   
   /*----------------------------*\
     Widget product
@@ -2183,7 +2097,7 @@
 					<!-- row -->
 					<div class="row ">
 						<!-- LOGO -->
-						<div class="col-md-3">
+						<div class="col-md-6">
 							<div class="header-logo">
 								<a href="#" class="logo">
 									<img src="{% static './img/logo.png' %}" alt="">
@@ -2195,7 +2109,7 @@
 						
 
 						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
+						<div class="col-md-6 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
 								<div>
