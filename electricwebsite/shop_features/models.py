@@ -29,7 +29,7 @@ class Product(models.Model):
     price=models.IntegerField()
     category=models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     description=models.CharField( max_length=250, default="", blank=True, null=True)
-    image=models.ImageField( upload_to='productimage/')
+    image=models.ImageField(upload_to='productimage/' , default='default.jpg')
     
 
     def __str__(self):
