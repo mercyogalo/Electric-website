@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . models import Product
-from django.contrib import authenticate, login ,logout
+from django.contrib.auth import authenticate, login ,logout
 from django.contrib import messages
 # Create your views here.
 
