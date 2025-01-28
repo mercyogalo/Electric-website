@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . models import Product
 from django.contrib.auth import authenticate, login ,logout
 from django.contrib import messages
@@ -26,10 +26,23 @@ def laptop(request):
 
 
 def login_user(request):
-    context={
+    if request.method=="POST":
+        username=request.POST['username']
+        password=request.POST['password']
+        user= authenticate(request, username=username, password=password)
         
-    }
-    return render(request,'login.html', context)
+        if user is not None:
+            login(request, user)
+            messages.success(request,("Logged in sucessfully"))
+            return redirect ('shop_features:home')
+        else:
+            messages.success(request,("There was an error please try again..."))
+            return redirect('shop_features:login')
+    else:
+        return render(request,'login.html')
+    
 
 def logout_user(request):
-    pass
+    logout(request)
+    messages.success(request, ("You have been logged out successfully"))
+    return redirect('shop_features:home')
