@@ -30,6 +30,9 @@ def laptop(request):
 
 
 def login_user(request):
+    context={
+        "messages": messages
+    }
     if request.method=="POST":
         username=request.POST['username']
         password=request.POST['password']
@@ -43,7 +46,7 @@ def login_user(request):
             messages.success(request,("There was an error please try again..."))
             return redirect('shop_features:login')
     else:
-        return render(request,'login.html')
+        return render(request,'login.html',context)
     
 
 def logout_user(request):
@@ -53,5 +56,25 @@ def logout_user(request):
 
 
 def register_user(request):
-    form=SignUpForm
-    return render(request,'register.html')
+    form=SignUpForm()
+    context={
+        "form": form,
+        "messages": messages
+    }
+    if request.method=="POST":
+        form=SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username=form.cleaned_data['username']
+            password=form.cleaned_data['password1']
+            
+            #login user
+            User.authenticate(username=username, password=password)
+            login(request,User)
+            messages.success(request, ("You have created an account  successfully"))
+            return redirect('shop_features:home')
+        else:
+            messages.success(request, ("Their was a problem with your registration. Kindly try again."))
+            return redirect('shop_features:register')
+    else:   
+         return render(request,'register.html',context)
