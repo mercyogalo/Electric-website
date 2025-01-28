@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from . models import Product
+from django.contrib import authenticate, login ,logout
+from django.contrib import messages
 # Create your views here.
 
 def home(request):
@@ -21,3 +23,13 @@ def checkout(request):
 
 def laptop(request):
     return render(request,'laptop.html')
+
+
+def login_user(request):
+    context={
+        
+    }
+    return render(request,'login.html', context)
+
+def logout_user(request):
+    pass
