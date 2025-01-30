@@ -43,7 +43,7 @@ def login_user(request):
             messages.success(request,("Logged in sucessfully"))
             return redirect ('shop_features:home')
         else:
-            messages.success(request,("There was an error please try again..."))
+            messages.error(request,("There was an error please try again..."))
             return redirect('shop_features:login')
     else:
         return render(request,'login.html',context)
@@ -69,12 +69,12 @@ def register_user(request):
             password=form.cleaned_data['password1']
             
             #login user
-            User.authenticate(username=username, password=password)
-            login(request,User)
+            user=authenticate(request, username=username, password=password)
+            login(request,user)
             messages.success(request, ("You have created an account  successfully"))
             return redirect('shop_features:home')
         else:
-            messages.success(request, ("Their was a problem with your registration. Kindly try again."))
+            messages.error(request, ("Their was a problem with your registration. Kindly try again."))
             return redirect('shop_features:register')
     else:   
          return render(request,'register.html',context)
