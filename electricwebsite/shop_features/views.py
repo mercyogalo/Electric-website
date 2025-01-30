@@ -18,8 +18,6 @@ def home(request):
 def store(request):
     return render(request,'store.html')
 
-def product(request):
-    return render(request,'product.html')
 
 def checkout(request):
     return render(request,'checkout.html')
@@ -78,3 +76,13 @@ def register_user(request):
             return redirect('shop_features:register')
     else:   
          return render(request,'register.html',context)
+     
+     
+def product(request,pk):
+    product=Product.objects.get(id=pk)
+    items=Product.objects.all()
+    context={
+        "product": product,
+        "items":items,
+    }
+    return render(request,'product.html',context)

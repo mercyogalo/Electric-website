@@ -17,7 +17,7 @@
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
+	
 		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
 
@@ -43,8 +43,25 @@
 
 
 <style>
-
+	:root{
+		--secondary-color: #2454D4;
+		--primary-color:#F3F6FB;
+		--default-color:#FFF;
+	  }
+.product-image{
+	width:400px;
+	height:350px
+}
+.product-section{
+	background-color:var(--primary-color)
+}
   
+@media(max-width:560px){
+	.product-image{
+		width:200px;
+		height:250px;
+	}
+}
 </style>
 
     </head>
@@ -185,7 +202,6 @@
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
 						<li class="active"><a href="{% url "shop_features:home" %}">Home</a></li>
-						<li><a href="{% url "shop_features:product" %}">Hot Deals</a></li>
 						<li><a href="{% url "shop_features:store" %}">Categories</a></li>
 						<li><a href="{% url "shop_features:checkout" %}">Laptops</a></li>
 						<li><a href="#">Smartphones</a></li>

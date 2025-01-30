@@ -337,7 +337,7 @@
 			<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
 			<h4 class="product-price">{{product.sale_price}}.00 <del class="product-old-price">{{product.price}}.00</del></h4>
 			
-			<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+			<a href="{% url "shop_features:product" product.id %}" class="add-to-cart-btn">View Product</a>
 		</div>
 		
 	</div>
@@ -365,7 +365,7 @@
 									<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
 									<h4 class="product-price">ksh{{product.price}}.00 </h4>
 								
-									<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+								<a href="{% url "shop_features:product" product.id %}" class="add-to-cart-btn">View Product</a>
 								</div>
 							
 							</div>
