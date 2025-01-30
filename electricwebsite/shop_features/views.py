@@ -86,3 +86,20 @@ def product(request,pk):
         "items":items,
     }
     return render(request,'product.html',context)
+
+
+def cart_summary(request):
+    context={
+        
+    }
+    return render(request,'cart_summary.html', context)
+
+def add(request):
+    pass
+
+
+def update(request):
+    pass
+
+def delete(request):
+    pass
