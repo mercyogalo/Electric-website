@@ -310,28 +310,7 @@
 
 
 
-<script>
 
-$(document).on('click', '#add-cart', function(e){
-	e.preventDefault();
-	$.ajax({
-		type:'POST',
-		url: {% url "shop_features:cart_add" %},
-		data:{
-                product_id:$('#add-cart').val(),
-				csrfmiddlewaretoken: '{{ csrf_token }}',
-				action:'post'
-		},
-		success: function(json){
-			console.log(json)
-		},
-		error: function(xhr, errmsg, err){
-			
-		}
-	});
-})
-
-</script>
 
 
 
@@ -346,6 +325,36 @@ $(document).on('click', '#add-cart', function(e){
 		<script src="{% static 'js/nouislider.min.js' %}"></script>
 		<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
 		<script src="{% static 'js/main.js' %}"></script>
+
+
+
+		<script>
+
+			$(document).on('click', '#add-cart', function(e){
+				e.preventDefault();
+				$.ajax({
+					type:'POST',
+					url: {% url "shop_features:cart_add" %},
+					data:{
+							product_id:$('#add-cart').val(),
+							csrfmiddlewaretoken: '{{ csrf_token }}',
+							action:'post'
+					},
+					success: function(json){
+						console.log(json)
+					},
+					error: function(xhr, errmsg, err){
+						
+					}
+				});
+			})
+			
+			</script>
+
+
+
+
+
 
 	</body>
 </html>

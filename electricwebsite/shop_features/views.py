@@ -102,7 +102,7 @@ def cart_add(request):
     
     if request.POST.get('action') == 'post':
         product_id = int(request.POST.get('product_id'))
-        product=get_object_or_404(Product, id=product.id)
+        product=get_object_or_404(Product, id=product_id)
         cart.add(product=product)
         
         
