@@ -312,25 +312,26 @@
 
 <script>
 
-
-let subscribeEmail=document.querySelector("#subscribe-email");
-
-
-function subscribeFunction(event){
-event.preventDefault();
-
-subscribeForm.innerHtml=`<p>Thank you for subscribing to our monthly newsletter</p>'
-
-}
-
-let subscribeForm=document.querySelector("#subscribe-form");
-subscribeForm.addEventListener("submit",subscribeFunction);
-
-console.log(subscribeForm);
-
+$(document).on('click', '#add-cart', function(e){
+	e.preventDefault();
+	$.ajax({
+		type:'POST',
+		url: {% url "shop_features:cart_add" %},
+		data:{
+                product_id:$('#add-cart').val(),
+				csrfmiddlewaretoken: '{{ csrf_token }}',
+				action:'post'
+		},
+		success: function(json){
+			console.log(json)
+		},
+		error: function(xhr, errmsg, err){
+			
+		}
+	});
+})
 
 </script>
-
 
 
 

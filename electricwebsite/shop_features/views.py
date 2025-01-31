@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from . models import Product
 from django.contrib.auth import authenticate, login ,logout
 from django.contrib import messages
@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from . forms import SignUpForm
+from . cart import Cart
+from django.http import JsonResponse
+
 # Create your views here.
 
 def home(request):
@@ -94,12 +97,23 @@ def cart_summary(request):
     }
     return render(request,'cart_summary.html', context)
 
-def add(request):
+def cart_add(request):
+    cart = Cart(request)
+    
+    if request.POST.get('action') == 'post':
+        product_id = int(request.POST.get('product_id'))
+        product=get_object_or_404(Product, id=product.id)
+        cart.add(product=product)
+        
+        
+        response = JsonResponse({'Product Name: ': product.name})
+        
+    
+        return response
+
+
+def cart_update(request):
     pass
 
-
-def update(request):
-    pass
-
-def delete(request):
+def cart_delete(request):
     pass

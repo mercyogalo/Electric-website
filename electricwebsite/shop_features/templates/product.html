@@ -43,8 +43,11 @@
 								   <span class="product-available">In Stock</span>
 							   </div>
 							   <p>{{product.description}}</p>
-   
-						   
+                                   
+							   <button class="add-to-cart-btn" value="{{product.id}}" id="add-cart">
+								Add to cart
+							</button>
+
 						   </div>
 					   </div>
 					   <!-- /Product details -->
@@ -79,6 +82,9 @@
 						   </div>
 						   <p>{{product.description}}</p>
 
+						   <button class="add-to-cart-btn" value="{{product.id}}" id="add-cart">
+							Add to cart
+						</button>
 					   
 					   </div>
 				   </div>
@@ -137,6 +143,9 @@
 				<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
 				<h4 class="product-price">{{item.sale_price}} <del class="product-old-price">ksh{{item.price}}.00</del></h4>
 				
+				<button class="add-to-cart-btn" value="{{product.id}}" id="add-cart">
+					Add to cart
+				</button>
 				
 			</div>
 			
@@ -161,7 +170,11 @@
 				<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
 				<h4 class="product-price">ksh{{item.price}}.00 </h4>
 				
-				
+				<button class="add-to-cart-btn" value="{{product.id}}" id="add-cart">
+					Add to cart
+				</button>
+
+
 			</div>
 			
 		</div>
