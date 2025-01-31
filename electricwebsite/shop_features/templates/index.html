@@ -338,9 +338,11 @@
 			<h4 class="product-price">{{product.sale_price}}.00 <del class="product-old-price">{{product.price}}.00</del></h4>
 			
 			<a href="{% url "shop_features:product" product.id %}" class="add-to-cart-btn">View Product</a>
-			<button class="add-to-cart-btn">
+		
+			<button class="add-to-cart-btn" value="{{product.id}}" id="add-cart">
 				Add to cart
 			</button>
+
 
 		</div>
 		
@@ -371,9 +373,13 @@
 								
 								<a href="{% url "shop_features:product" product.id %}" class="add-to-cart-btn">View Product</a>
 
-								<button class="add-to-cart-btn">
+								<button class="add-to-cart-btn" value="{{product.id}}" id="add-cart">
 									Add to cart
 								</button>
+				
+
+
+
 								</div>
 							
 							</div>
