@@ -2066,3 +2066,8 @@
       margin-top: 10px;
     }
   }
+
+  .cart-product{
+    display:flex;
+    
+  }

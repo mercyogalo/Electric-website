@@ -55,11 +55,23 @@
 .product-section{
 	background-color:var(--primary-color)
 }
+.cart-product{
+	display:flex;
+	
+}
+.cart-product img{
+	width:120px;
+	height:80px;
+}
   
 @media(max-width:560px){
 	.product-image{
 		width:200px;
 		height:250px;
+	}
+	.cart-product img{
+		width: 80px;
+		height:40px;
 	}
 }
 </style>
@@ -198,47 +210,6 @@
 		</header>
 		<!-- /HEADER -->
 
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
-			  <a class="navbar-brand" href="#">Navbar w/ text</a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-				  <li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{% url "shop_features:home" %}">
-						Home
-					</a>
-				  </li>
-
-				  <li class="nav-item">
-					<a href="{% url "shop_features:store" %}">Categories</a>
-				  </li>
-				  <li class="nav-item">
-					<a href="{% url "shop_features:checkout" %}">Laptops</a>
-				  </li>
-				</ul>
-
-
-
-				<span class="navbar-text">
-					<div>
-						<a href="{% url "shop_features:cart_summary" %}">
-							<i class="fa fa-shopping-cart"></i>
-							<span>Your Cart</span>
-							<div class="qty">0</div>
-						</a>
-					</div>
-					<!-- /Cart -->
-				</span>
-
-
-
-			  </div>
-			</div>
-		  </nav>
 
 
 
