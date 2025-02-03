@@ -19,7 +19,11 @@ def home(request):
     return render(request,'index.html', context)
 
 def store(request):
-    return render(request,'store.html')
+    items=Product.objects.all()
+    context={
+        "items":items,
+    }
+    return render(request,'store.html', context)
 
 
 def checkout(request):
@@ -107,12 +111,11 @@ def cart_add(request):
         product=get_object_or_404(Product, id=product_id)
         cart.add(product=product)
         
-        
-        response = JsonResponse({'Product Name: ': product.name})
-        
+        cart_quantity= cart.__len__()
+        response = JsonResponse({'qty': cart_quantity})
     
         return response
-
+    return JsonResponse({"error": "Invalid request method"}, status=400)
 
 def cart_update(request):
     pass

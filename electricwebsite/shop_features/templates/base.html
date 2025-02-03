@@ -149,7 +149,9 @@
 										<a href="{% url "shop_features:cart_summary" %}">
 											<i class="fa fa-shopping-cart"></i>
 											<span>Your Cart</span>
-											<div class="qty">0</div>
+											<div class="qty" id="cart_quantity">
+												{{cart|length}}
+											</div>
 										</a>
 									</div>
 									<!-- /Cart -->
@@ -378,7 +380,7 @@
 							action:'post'
 					},
 					success: function(json){
-						console.log(json)
+						document.getElementById("cart_quantity").textContent=json.qty
 					},
 					error: function(xhr, errmsg, err){
 						
