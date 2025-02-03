@@ -39,16 +39,18 @@
 
         <tbody>
 
+          {% for cart_product in  cart_products %}
+
           <tr>
            
             <td>
               <div class="product-widget">
 								<div class="product-img">
-									<img src="{% static './img/product02.png' %}" alt="">
+									<img src="{{cart_product.image.url}}" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
+									<p class="product-category">{{cart_product.category}}</p>
+									<h3 class="product-name"><a href="{% url "shop_features:product" cart_product.id %}">{{cart_product.name}}</a></h3>
 									<a>
                     Edit
                    </a>
@@ -56,9 +58,17 @@
 							</div>
   </td>
 
-            <td>Mark</td>
+            <td><b>ksh</b> {{cart_product.price}}.00</td>
 
-            <td>Mark</td>
+            <td>
+                    {% for key, value in  quantities.items%}
+                    {% if  key == cart_product.id|slugify %}
+                    {{value}}
+                    {% endif %}
+                    
+                    {% endfor %}
+
+            </td>
 
             <td>Mark</td>
 
@@ -69,40 +79,7 @@
             </td>
 
           </tr>
-
-
-          <tr>
-           
-            <td>
-              <div class="product-widget">
-								<div class="product-img">
-									<img src="{% static './img/product03.png' %}" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<a>
-                    Edit
-                   </a>
-								</div>
-							</div>
-  </td>
-
-            <td class="mt-3">Mark</td>
-
-            <td>Mark</td>
-
-            <td>Mark</td>
-
-            <td>
-              <button>
-                <i class="fa-solid fa-x" style="color: #B197FC;"></i>
-              </button>
-            </td>
-
-          </tr>
-        
-
+          {% endfor %}
 
         </tbody>
       </table>
