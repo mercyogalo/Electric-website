@@ -104,6 +104,202 @@ margin-bottom:5px;
 padding-top:15px;
 padding-bottom:15px;
 }
+
+/*----------------------------*\
+product
+\*----------------------------*/
+
+
+
+.category-product-img>img {
+    width:150px;
+	height:180px;
+	display:block;
+	margin:0 auto;
+  }
+  
+
+.category-product-img {
+	padding:15px;
+	background-color: var(--primary-color);
+  }
+
+  .category-product-body {
+    position: relative;
+    text-align: center;
+  }
+  
+
+
+
+*=========================================================
+    06 -> PRODUCT
+  ===========================================================*/
+  
+  /*----------------------------*\
+    product
+  \*----------------------------*/
+  
+  .product {
+    position: relative;
+    margin: 15px 0px;
+    -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+    box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    background-color:var(--primary-color)
+  }
+  
+  .product:hover {
+    -webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px var( --secondary-color);
+    box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px var( --secondary-color);
+  }
+  
+  .product .product-img {
+    position: relative;
+  }
+  
+  .product .product-img>img {
+    width: 100%;
+  }
+  
+  .product .product-img .product-label {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .product .product-img .product-label>span {
+    border: 2px solid;
+    padding: 2px 10px;
+    font-size: 12px;
+  }
+  
+  .product .product-img .product-label>span.sale {
+    background-color: #FFF;
+    border-color: var( --secondary-color);
+    color: var( --secondary-color);
+  }
+  
+  .product .product-img .product-label>span.new {
+    background-color: var( --secondary-color);
+    border-color: var( --secondary-color);
+    color: #FFF;
+  }
+  
+  .product .product-body {
+    position: relative;
+    padding: 15px;
+    background-color: #FFF;
+    text-align: center;
+    z-index: 20;
+  }
+  
+  .product .product-body .product-category {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #8D99AE;
+  }
+  
+  .product .product-body .product-name {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .product .product-body .product-name>a {
+    font-weight: 700;
+  }
+  
+  .product .product-body .product-name>a:hover, .product .product-body .product-name>a:focus {
+    color: var( --secondary-color);
+  }
+  
+  .product .product-body .product-price {
+    color: var( --secondary-color);
+    font-size: 18px;
+  }
+  
+  .product .product-body .product-price .product-old-price {
+    font-size: 70%;
+    font-weight: 400;
+    color: #8D99AE;
+  }
+  
+  .product .product-body .product-rating {
+    position: relative;
+    margin: 15px 0px 10px;
+    height: 20px;
+  }
+  
+  .product .product-body .product-rating>i {
+    position: relative;
+    width: 14px;
+    margin-right: -4px;
+    background: #FFF;
+    color: #E4E7ED;
+    z-index: 10;
+  }
+  
+ 
+  
+  .product .product-body .product-btns>button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+    border: none;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .product .product-body .product-btns>button:hover {
+    background-color: #E4E7ED;
+    color: var( --secondary-color);
+    border-radius: 50%;
+  }
+  
+.add-to-cart-btn{
+    background-color:var(--primary-color);
+    padding: 10px;
+    border-radius: 25px;
+    color:var(--secondary-color);
+    border:1px solid var(--secondary-color);
+  }
+
+  .add-to-cart-btn:hover{
+    background-color: var(--secondary-color);
+    color:var(--default-color);
+    border:1px solid var(--primary-color);
+  }
+
+
+  
+ .about-section{
+  padding: 20px 0px;
+  margin: 30px 0px;
+  background-color: #E4E7ED;
+  
+ }
+  
+ .lastest-brand-section .brands-section{
+  padding: 60px 0;
+  background-color:var(--primary-color);
+  display:block;
+  margin:0 auto;
+  margin-bottom:10px;
+ }
+
+
+ @media(max-width: 600px){
+  .lastest-brand-section .brands-section{
+    padding:15px 0;
+  }
+ }
+
+
+
+
   
 
 
