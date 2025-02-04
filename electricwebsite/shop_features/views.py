@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from . models import Product
+from . models import Product, Category
 from django.contrib.auth import authenticate, login ,logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -13,8 +13,10 @@ from django.http import JsonResponse
 
 def home(request):
     products=Product.objects.all()
+    items=Category.objects.all()
     context={
         "products": products,
+        "items":items,
     }
     return render(request,'index.html', context)
 
