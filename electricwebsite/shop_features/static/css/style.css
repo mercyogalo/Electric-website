@@ -11,11 +11,11 @@
   /*----------------------------*\
     Typography
   \*----------------------------*/
-  :root{
-    --secondary-color: #2454D4;
-    --primary-color:#F3F6FB;
-    --default-color:#FFF;
-  }
+ :root{
+  --secondary-color: #0D0D0D;
+  --primary-color:#F3F3F3;
+  --default-color:#FFF;
+ }
   
   body {
     font-family: 'Montserrat', sans-serif;
@@ -1795,7 +1795,7 @@
   ===========================================================*/
   
   #newsletter.section {
-    border-top: 2px solid #E4E7ED;
+
     border-bottom: 3px solid var( --secondary-color);
     margin-top: 30px;
   }

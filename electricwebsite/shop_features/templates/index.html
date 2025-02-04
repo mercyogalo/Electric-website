@@ -101,7 +101,7 @@
 
 			<div  class="col-sm-2">
 				<i class="fa-solid fa-camera-retro " style="color: #B197FC;"></i>
-				<p >Laptops</p>
+				<p >smartphone</p>
 			</div>
 
 			<div  class="col-sm-2">
@@ -111,7 +111,7 @@
 
 			<div  class="col-sm-2">
 				<i class="fa-solid fa-gamepad " style="color: #B197FC;"></i>
-				<p >Laptops</p>
+				<p >Gaming</p>
 			</div>
 
 
@@ -268,9 +268,19 @@ ALL PACKAGES
 		</div>
 
 		<div class="product-body">
-			<p class="product-category">{{product.category}}</p>
+
+			<div>
+				<span>
+					<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+				</span>
+			</div>
+
 			<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
-			<h4 class="product-price">{{product.sale_price}}.00 <del class="product-old-price">{{product.price}}.00</del></h4>
+			<h4 class="product-price">ksh{{product.sale_price}}.00 <del class="product-old-price">ksh{{product.price}}.00</del></h4>
 			
 			
      
@@ -297,13 +307,22 @@ ALL PACKAGES
 									<img src="{{product.image.url}}" alt="">
 								</div>
 
+					
 								<div class="product-body">
-									<p class="product-category">{{product.category}}</p>
+									<div>
+										<span>
+											<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #B197FC;"></i>
+										</span>
+									</div>
+						
 									<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
 									<h4 class="product-price">ksh{{product.price}}.00 </h4>
 								
-							
-				
+						
 
 
 
@@ -337,11 +356,210 @@ ALL PACKAGES
 	</div>
 	<!-- /SECTION -->
 
+	<div class="section company-info-section">
+	<div class="container ">
+		<div class="row ">
+			<div class="col-md-12 ">
+
+				<div class="col-sm-3 company-info">
+
+					<div>
+						<i class="fa-solid fa-headset fa-2xl" style="color: #B197FC;"></i>
+					</div>
+
+					<div class="ms-2">
+						<h3>
+                             Free fast Delivery
+						</h3>
+						<p>
+							Fast Order Delivery tracking
+						</p>
+						
+					</div>
+
+	</div>
+
+
+	<div class="col-sm-3 company-info">
+
+		<div>
+			<i class="fa-solid fa-hand-holding-dollar fa-2xl" style="color: #0D0D0D;"></i>
+		</div>
+
+		<div class="ms-2">
+			<h3>
+                             24 ×  7
+						</h3>
+						<p>
+							If You Need Help We Offer
+						</p>			
+		</div>
+
+
+	</div>
+
+	<div class="col-sm-3 company-info">
+		<div>
+			<i class="fa-solid fa-medal fa-2xl" style="color: #0D0D0D;"></i>
+		</div>
+
+		<div class="ms-2">
+			<h3>
+                             Best Quality
+						</h3>
+						<p>
+							The Best Quality Squishes
+						</p>			
+		</div>
+
+	</div>
+
+	<div class="col-sm-3 company-info">
+		<div>
+			<i class="fa-solid fa-truck-fast fa-2xl" style="color: #0D0D0D;"></i>		
+		</div>
+
+		<div class="ms-2">
+			<h3>
+				Gift voucher
+		   </h3>
+		   <p>
+			Terms and conditions for
+		   </p>		
+		</div>
+
+
+	</div>
+
+</div>
+</div>
+</div>
+</div>
 
 
 
 
 
+
+
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<!-- product -->
+
+
+
+										<div class="product">
+											<div class="product-img">
+												<img src="{% static './img/product01.png' %}" alt="">
+
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												
+											</div>
+											
+										</div>
+										<!-- /product -->
+
+
+
+
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="{% static './img/product02.png' %}" alt="">
+												
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+											
+											</div>
+										</div>
+										<!-- /product -->
+
+
+
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="{% static './img/product03.png' %}" alt="">
+												
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												
+											</div>
+										</div>
+										<!-- /product -->
+
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="{% static './img/product04.png' %}" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												
+											</div>
+										</div>
+										<!-- /product -->
+
+										<!-- product -->
+										<div class="product">
+											<div class="product-img">
+												<img src="{% static './img/product05.png' %}" alt="">
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+
+											</div>	
+										</div>
+										<!-- /product -->
+
+
+
+									</div>
+
+								
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+		
 
 
 
