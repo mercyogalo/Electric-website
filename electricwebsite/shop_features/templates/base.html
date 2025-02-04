@@ -50,6 +50,13 @@
 		--default-color:#FFF;
 		--accent-color:#8B8F98;
 	  }
+	  
+	  body {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		color: var(--default-color);
+	  }
+
 .product-image{
 	width:400px;
 	height:350px
@@ -72,9 +79,11 @@
 .about .section-1{
 	border-right:4px solid var(--secondary-color);
 	font-size:12px;
+	color:var(--secondary-color);
 }
 .about .section-2 p{
 	font-size:12px;
+	color:var(--secondary-color);
 }
 .product-icons{
 	display:block;
@@ -149,37 +158,35 @@ Category
   }
   
 
-
-
-*=========================================================
-    06 -> PRODUCT
-  ===========================================================*/
-  
   /*----------------------------*\
     product
   \*----------------------------*/
+
+
+
+
   
-  .product {
+  .product{
     position: relative;
     margin: 15px 0px;
-    -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
-    box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+    -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px var( --secondary-color);
+    box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px var( --secondary-color);
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
-    background-color:var(--primary-color)
   }
   
-  .product:hover {
-    -webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px var( --secondary-color);
-    box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px var( --secondary-color);
-  }
+  
   
   .product .product-img {
     position: relative;
+	z-index:20;
   }
   
   .product .product-img>img {
-    width: 100%;
+    height:220px;
+	width:180px;
+	display:block;
+	margin:0 auto;
   }
   
   .product .product-img .product-label {
@@ -209,7 +216,7 @@ Category
   .product .product-body {
     position: relative;
     padding: 15px;
-    background-color: #FFF;
+    background-color: var(--primary-color);
     text-align: center;
     z-index: 20;
   }
@@ -317,11 +324,142 @@ Category
  }
 
 
-
-
   
 
 
+hr{
+	display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+	color:var(--accent-color);
+}
+
+
+.shipping-form .input{
+	background-color:var(--primary-color) !important;
+	color:var(--secondary-color) !important;
+	opacity: 1; 
+}
+.shipping-form .input::placeholder {
+    color: var(--secondary-color) !important;  
+    opacity: 1; 
+}
+
+.bg-dark{
+	background-color:var(--secondary-color) !important;
+	color:var(--default-color);
+}
+.navbar-section{
+	max-width:100%;
+}
+
+
+
+.cart-container {
+    max-width: 900px;
+    margin: auto;
+    background: var(--default-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.cart-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-details {
+    flex: 1;
+}
+
+.cart-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart-category {
+    font-size: 14px;
+    color:var(--accent-color);
+}
+
+.cart-description {
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+.cart-quantity label{
+	color:var(--secondary-color);
+}
+.cart-quantity input {
+    width: 50px;
+    text-align: center;
+	color:var(--secondary-color);
+}
+
+.cart-price {
+    font-size: 16px;
+    font-weight: bold;
+	color:var(--secondary-color);
+}
+
+.cart-remove button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.continue-shopping {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+.checkout-btn {
+    background:var(--secondary-color) ;
+    color: var(--default-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.checkout-btn:hover{
+	cursor: pointer;
+    color: var(--default-color);
+	border:1px solid var(--secondary-color)
+
+}
 
 
 @media(max-width:560px){
@@ -355,6 +493,12 @@ Category
 	display:flex;
 	justify-content:space-evenly;
 }
+
+.cart-section .cart-img>img{
+	width:50px;
+	height:50px;
+}
+
 }
 </style>
 
@@ -362,10 +506,14 @@ Category
 	<body>
 		<!-- HEADER -->
 		<header>
-	
-			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+			<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark navbar-section" id="header" data-bs-theme="dark">
 				<div class="container-fluid">
-				  <a class="navbar-brand" href="#">Navbar</a>
+					
+				  <a class="navbar-brand logo" href="#">
+							<img src="{% static './img/logo.png' %}" alt="">
+				</a>
+									
 				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				  </button>
@@ -376,14 +524,76 @@ Category
 						<a class="nav-link active" aria-current="page" href="{% url "shop_features:home" %}">Home</a>
 					  </li>
 					  <li class="nav-item">
-						<a class="nav-link" href="{% url "shop_features:checkout" %}">Checkout</a>
+						<a class="nav-link" href="{% url "shop_features:shipping" %}">Shipping</a>
 					  </li>
 					  <li class="nav-item">
 						<a class="nav-link" href="{% url "shop_features:store" %}">Store</a>
 					  </li>
-					
-					  
 					</ul>
+					
+
+					<div class="col-md-6 clearfix">
+						<div class="header-ctn">
+							<!-- Wishlist -->
+							
+
+								<!-- Cart -->
+								<div>
+									<a href="{% url "shop_features:cart_summary" %}">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="qty" id="cart_quantity">
+											{{cart|length}}
+										</div>
+									</a>
+								</div>
+								<!-- /Cart -->
+
+
+							
+							{% if user.is_authenticated %}
+						  <div>
+							<a href="{% url "shop_features:logout" %}">
+								<i class="fa-solid fa-right-from-bracket" style="color: #FFF;"></i>
+								<span>Logout</span>
+							</a>
+						</div>
+
+						{% else %}
+
+						<div>
+							<a href="{% url "shop_features:login" %}">
+								<i class="fa fa-user-o "></i>
+								<span>Login</span>
+							</a>
+						</div>
+
+						<div>
+							<a href="{% url "shop_features:register" %}">
+								<i class="fa fa-user-o "></i>
+								<span>Register</span>
+							</a>
+						</div>
+
+
+							{% endif %}
+
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
+							<!-- /Menu Toogle -->
+						</div>
+					</div>
+					<!-- /ACCOUNT -->
+
+
+
+
+
 				  </div>
 				</div>
 			  </nav>
@@ -393,122 +603,7 @@ Category
 
 
 
-			<!-- MAIN HEADER -->
-			<div id="header">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row ">
-						<!-- LOGO -->
-
-
-
-						<div class="col-md-6">
-
-
-							<div class="header-logo">
-								<a href="#" class="logo">
-									<img src="{% static './img/logo.png' %}" alt="">
-								</a>
-							</div>
-
-							<div class="collapse navbar-collapse" id="navbarNav">
-								<ul class="navbar-nav">
 			
-								  <li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="{% url "shop_features:home" %}">Home</a>
-								  </li>
-								  <li class="nav-item">
-									<a class="nav-link" href="{% url "shop_features:checkout" %}">Checkout</a>
-								  </li>
-								  <li class="nav-item">
-									<a class="nav-link" href="{% url "shop_features:store" %}">Store</a>
-								  </li>
-								
-								  
-								</ul>
-							  </div>
-
-
-						</div>
-						<!-- /LOGO -->
-
-						
-
-						<!-- ACCOUNT -->
-						<div class="col-md-6 clearfix">
-							<div class="header-ctn">
-								<!-- Wishlist -->
-								
-
-									<!-- Cart -->
-									<div>
-										<a href="{% url "shop_features:cart_summary" %}">
-											<i class="fa fa-shopping-cart"></i>
-											<span>Your Cart</span>
-											<div class="qty" id="cart_quantity">
-												{{cart|length}}
-											</div>
-										</a>
-									</div>
-									<!-- /Cart -->
-
-
-                                
-								{% if user.is_authenticated %}
-                              <div>
-								<a href="{% url "shop_features:logout" %}">
-									<i class="fa-solid fa-right-from-bracket" style="color: #FFF;"></i>
-									<span>Logout</span>
-								</a>
-							</div>
-
-							{% else %}
-
-							<div>
-								<a href="{% url "shop_features:login" %}">
-									<i class="fa fa-user-o "></i>
-									<span>Login</span>
-								</a>
-							</div>
-
-							<div>
-								<a href="{% url "shop_features:register" %}">
-									<i class="fa fa-user-o "></i>
-									<span>Register</span>
-								</a>
-							</div>
-
-
-								{% endif %}
-
-								<!-- Menu Toogle -->
-								<div class="menu-toggle">
-									<a href="#">
-										<i class="fa fa-bars"></i>
-										<span>Menu</span>
-									</a>
-								</div>
-								<!-- /Menu Toogle -->
-							</div>
-						</div>
-						<!-- /ACCOUNT -->
-
-	
-
-
-
-					</div>
-					<!-- row -->
-				</div>
-				<!-- container -->
-			</div>
-			<!-- /MAIN HEADER -->
-		</header>
-		<!-- /HEADER -->
-
-
-
 
 		
 	
@@ -553,6 +648,7 @@ Category
 									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
 									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
 								</ul>
+								
 							</div>
 						</div>
 
@@ -593,13 +689,6 @@ Category
 								
           	<div class="newsletter">
 							
-
-							<form id="subscribe-form">
-
-                <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-								<input class="input" type="email" id="subscribe-email" placeholder="Enter Your Email" required>
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-							</form>
 
 							<ul class="newsletter-follow">
 								<li>

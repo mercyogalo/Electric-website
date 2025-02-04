@@ -7,7 +7,7 @@ app_name="shop_features"
 
 urlpatterns = [
     path("", views.home,name="home"),
-    path("checkout/", views.checkout, name="checkout"),
+    path("shipping/", views.shipping, name="shipping"),
     path("product/<int:pk>", views.product, name="product"),
     path("store/", views.store, name="store"),
     path("login/", views.login_user, name="login"),

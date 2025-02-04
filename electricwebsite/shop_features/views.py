@@ -28,8 +28,8 @@ def store(request):
     return render(request,'store.html', context)
 
 
-def checkout(request):
-    return render(request,'checkout.html')
+def shipping(request):
+    return render(request,'shipping.html')
 
 
 def laptop(request):
