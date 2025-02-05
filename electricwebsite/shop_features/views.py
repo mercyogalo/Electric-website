@@ -29,7 +29,14 @@ def store(request):
 
 
 def shipping(request):
-    return render(request,'shipping.html')
+    cart=Cart(request)
+    cart_products=cart.get_prods
+    quantities=cart.get_quants
+    context={
+       'cart_products':cart_products,
+       'quantities':quantities,
+    }
+    return render(request,'shipping.html',context)
 
 
 def laptop(request):
