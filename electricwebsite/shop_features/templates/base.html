@@ -57,18 +57,11 @@
 		color: var(--secondary-color);
 		background-color:var(--default-color);
 	  }
+    .text-dark{
+      color:var(--secondary-color) !important;
+    }
 
-.product-image{
-	width:400px;
-	height:350px
-}
-.product-section{
-	background-color:var(--primary-color)
-}
 
-.quantity-section{
-	display:flex;
-}
 .heading{
 	text-align:center;
 	font-size:40px;
@@ -158,6 +151,16 @@ Category
 	font-size:18px;
   }
   
+
+
+  #header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color:  var(--primary-color) !important;
+  }
+  .bg-light{
+    background-color:  var(--primary-color) !important;
+  }
 
   /*----------------------------*\
     product
@@ -287,17 +290,17 @@ Category
   }
   
 .add-to-cart-btn{
-    background-color:var(--primary-color);
+    background-color:var(--secondary-color);
     padding: 10px;
     border-radius: 25px;
-    color:var(--secondary-color);
-    border:1px solid var(--secondary-color);
+    color:var(--default-color);
+    border:none;
   }
 
   .add-to-cart-btn:hover{
-    background-color: var(--secondary-color);
-    color:var(--default-color);
-    border:1px solid var(--primary-color);
+    background-color: var(--default-color);
+    color:var(--secondary-color);
+	border:1px solid var(--secondary-color);
   }
 
 
@@ -350,9 +353,9 @@ hr{
     opacity: 1; 
 }
 
-.bg-dark{
-	background-color:var(--secondary-color) !important;
-	color:var(--default-color);
+.bg-light{
+	background-color:var(--default-color) !important;
+	color:var(--secondary-color);
 }
 .navbar-section{
 	max-width:100%;
@@ -537,13 +540,153 @@ display: block;
 margin-top: 30px;
 }
 
+.main-image> img{
+	mix-blend-mode: multiply; 
+	width:400px;
+	height:400px;
+}
+
+
+
+
+
+
+/*=========================================================
+    05 -> HOT DEAL
+  ===========================================================*/
+  
+  #hot-deal.section {
+    padding: 150px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-image: url("/static/img/main-image-bg.jpg");
+    background-color:#000000;
+    color:var(--default-color);
+
+
+}
+  
+  .hot-deal {
+    text-align: center;
+    color:var(--default-color);
+  }
+  
+  .hot-deal-heading{
+    color:var(--default-color);
+  }
+
+  
+  .hot-deal .hot-deal-countdown>li>div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .hot-deal .hot-deal-countdown>li>div h3 {
+    color: var(--default-color);
+    margin-bottom: 0px;
+  }
+  
+  .hot-deal .hot-deal-countdown>li>div span {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--default-color);
+  }
+  
+
+
+  .hot-deal p {
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  
+  .hot-deal .cta-btn {
+    margin-top: 15px;
+    color:var(--secondary-color);
+    background-color:var(--default-color);
+    border:1px solid var(--primary-color);
+  }
+    
+.product-main-section .product-image{
+  width:450px;
+  height:500px;
+  border:2px solid var(--accent-color);
+  border-radius:20px;
+}
+.product-cart-btn{
+  display:block;
+  margin:0 auto;
+  color:var(--default-color);
+  background-color:var(--secondary-color);
+  padding:10px;
+  padding-right:20px;
+  padding-left:20px;
+  border-radius:5px;
+  border:1px solid var(--secondary-color);
+}
+.product-cart-btn:hover{
+  cursor:pointer;
+  color:var(--secondary-color);
+  background-color:var(--default-color);
+
+}
+
+
+.quantity-section{
+	display:flex;
+}
+/*----------------------------*\
+Product details
+\*----------------------------*/
+
+.product-details .product-name {
+font-size: 20px;
+text-transform:uppercase;
+}
+.product-details .product-description-heading{
+  font-size:14px;
+  margin-top:20px;
+}
+.product-details .product-rating {
+display: inline-block;
+margin-right: 15px;
+}
+.product-details .product-description{
+  font-size:13px;
+}
+
+
+.product-details .review-link {
+font-size: 12px;
+}
+
+.product-details .product-price {
+display: inline-block;
+font-size: 15px;
+margin-top: 10px;
+margin-bottom: 15px;
+color: var( --secondary-color);
+}
+
+.product-details .product-price .product-old-price {
+font-size: 70%;
+font-weight: 400;
+color: #8D99AE;
+}
+
+
+
+
 
 
 @media(max-width:560px){
-	.product-image{
-		width:200px;
-		height:250px;
-	}
+
 	.heading{
 		font-size:25px;
 	}
@@ -575,105 +718,88 @@ margin-top: 30px;
 	width:50px;
 	height:50px;
 }
+product-main-section .product-image{
+  width:200px;
+  height:250px;
+  border:2px solid var(--accent-color);
+  border-radius:20px;
+}
 
 }
 </style>
 
     </head>
 	<body>
-		<!-- HEADER -->
-		<header>
+	<!-- HEADER -->
+<header id="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary text-dark bg-light navbar-section" >
+        <div class="container-fluid navbar-container">
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="#">
+              ElectroMart
+            </a>
 
-			<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark navbar-section" id="header" data-bs-theme="dark">
-				<div class="container-fluid">
-					
-				  <a class="navbar-brand logo" href="#">
-							<img src="{% static './img/logo.png' %}" alt="">
-				</a>
-									
-				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				  </button>
-				  <div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-					  <li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="{% url "shop_features:home" %}">Home</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="{% url "shop_features:shipping" %}">Shipping</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="{% url "shop_features:store" %}">Store</a>
-					  </li>
-					</ul>
-					
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- Push links to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" aria-current="page" href="{% url 'shop_features:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{% url 'shop_features:shipping' %}">Shipping</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{% url 'shop_features:store' %}">Store</a>
+                    </li>
+                </ul>
+            </div>
 
-					<div class="col-md-6 clearfix">
-						<div class="header-ctn">
-							<!-- Wishlist -->
-							
+            <!-- Account & Cart Section -->
+            <div class="header-ctn d-flex align-items-center ms-auto"> <!-- Push this section to the right -->
+                <!-- Cart -->
+                <div class="me-3"> <!-- Adds spacing -->
+                    <a href="{% url 'shop_features:cart_summary' %}">
+                        <i class="fa fa-shopping-cart" style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Your Cart</span>
+                        <div class="qty text-light" id="cart_quantity">{{ cart|length }}</div>
+                    </a>
+                </div>
 
-								<!-- Cart -->
-								<div>
-									<a href="{% url "shop_features:cart_summary" %}">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-										<div class="qty" id="cart_quantity">
-											{{cart|length}}
-										</div>
-									</a>
-								</div>
-								<!-- /Cart -->
+                <!-- Authentication Links -->
+                {% if user.is_authenticated %}
+                <div>
+                    <a href="{% url 'shop_features:logout' %}">
+                        <i class="fa-solid fa-right-from-bracket" style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Logout</span>
+                    </a>
+                </div>
+                {% else %}
+                <div class="me-3">
+                    <a href="{% url 'shop_features:login' %}">
+                        <i class="fa fa-user-o"v style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Login</span>
+                    </a>
+                </div>
+                <div class="me-3">
+                    <a href="{% url 'shop_features:register' %}">
+                        <i class="fa fa-user-o" style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Register</span>
+                    </a>
+                </div>
+                {% endif %}
 
+               
 
-							
-							{% if user.is_authenticated %}
-						  <div>
-							<a href="{% url "shop_features:logout" %}">
-								<i class="fa-solid fa-right-from-bracket" style="color: #FFF;"></i>
-								<span>Logout</span>
-							</a>
-						</div>
+            </div>
+        </div>
+    </nav>
+</header>
 
-						{% else %}
-
-						<div>
-							<a href="{% url "shop_features:login" %}">
-								<i class="fa fa-user-o "></i>
-								<span>Login</span>
-							</a>
-						</div>
-
-						<div>
-							<a href="{% url "shop_features:register" %}">
-								<i class="fa fa-user-o "></i>
-								<span>Register</span>
-							</a>
-						</div>
-
-
-							{% endif %}
-
-							<!-- Menu Toogle -->
-							<div class="menu-toggle">
-								<a href="#">
-									<i class="fa fa-bars"></i>
-									<span>Menu</span>
-								</a>
-							</div>
-							<!-- /Menu Toogle -->
-						</div>
-					</div>
-					<!-- /ACCOUNT -->
-
-
-
-
-
-				  </div>
-				</div>
-			  </nav>
 
 
 

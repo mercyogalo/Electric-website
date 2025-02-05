@@ -26,30 +26,7 @@
 					<!-- STORE -->
 					<div id="store" class="col-md-12">
 						<!-- store top filter -->
-						<div class="store-filter clearfix">
-							<div class="store-sort">
-								<label>
-									Sort By:
-									<select class="input-select">
-										<option value="0">Popular</option>
-										<option value="1">Position</option>
-									</select>
-								</label>
-
-								<label>
-									Show:
-									<select class="input-select">
-										<option value="0">20</option>
-										<option value="1">50</option>
-									</select>
-								</label>
-							</div>
-							<ul class="store-grid">
-								<li class="active"><i class="fa fa-th"></i></li>
-								<li><a href="#"><i class="fa fa-th-list"></i></a></li>
-							</ul>
-						</div>
-						<!-- /store top filter -->
+						
 
 						<!-- store products -->
 						<div class="row">
@@ -57,9 +34,9 @@
 								<!-- store products -->
 					<div class="row">
 						{% for item in items %}
- {% if  product.is_sale %}
+ {% if  item.is_sale %}
 <!-- product -->
-<div class="col-md-4 col-xs-6">
+<div class="col-md-3 col-xs-6">
 
 	<div class="product">
 
@@ -71,18 +48,21 @@
 		</div>
 
 		<div class="product-body">
+			<div>
+				<span>
+					<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+					<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+				</span>
+			</div>
 			<p class="product-category">{{item.category}}</p>
 			<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
 			<h4 class="product-price">{{item.sale_price}}.00 <del class="product-old-price">{{item.price}}.00</del></h4>
-			<p>{{item.id}}</p>
-
-
+			
 
 			<a href="{% url "shop_features:product" item.id %}" class="add-to-cart-btn">View Product</a>
-		
-			<button class="add-to-cart-btn" value="{{item.id}}" id="add-cart">
-				Add to cart
-			</button>
 
 
 		</div>
@@ -99,7 +79,7 @@
                  {% else %}
 
 						<!-- product -->
-						<div class="col-md-4 col-xs-6">
+						<div class="col-md-3 col-xs-6">
 
 							<div class="product">
 
@@ -108,18 +88,20 @@
 								</div>
 
 								<div class="product-body">
+									<div>
+										<span>
+											<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+											<i class="fa-solid fa-star fa-sm" style="color: #8B8F98;"></i>
+										</span>
+									</div>
 									<p class="product-category">{{item.category}}</p>
 									<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
 									<h4 class="product-price">ksh{{item.price}}.00 </h4>
-									<p>{{item.id}}</p>
 								<a href="{% url "shop_features:product" item.id %}" class="add-to-cart-btn">View Product</a>
-
-								<button class="add-to-cart-btn" value="{{item.id}}" id="add-cart">
-									Add to cart
-								</button>
 				
-
-
 
 								</div>
 							
