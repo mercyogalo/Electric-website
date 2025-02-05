@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from . forms import SignUpForm
-from . cart import Cart
+from . shop_features import Cart
 from django.http import JsonResponse
 
 # Create your views here.

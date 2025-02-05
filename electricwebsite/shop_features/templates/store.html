@@ -62,7 +62,7 @@
 			<h4 class="product-price">{{item.sale_price}}.00 <del class="product-old-price">{{item.price}}.00</del></h4>
 			
 
-			<a href="{% url "shop_features:product" item.id %}" class="add-to-cart-btn">View Product</a>
+			<a href="{% url "shop_features:product" item.id %}" class="product-cart-btn">View Product</a>
 
 
 		</div>
@@ -100,7 +100,7 @@
 									<p class="product-category">{{item.category}}</p>
 									<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
 									<h4 class="product-price">ksh{{item.price}}.00 </h4>
-								<a href="{% url "shop_features:product" item.id %}" class="add-to-cart-btn">View Product</a>
+								<a href="{% url "shop_features:product" item.id %}" class="product-cart-btn">View Product</a>
 				
 
 								</div>
