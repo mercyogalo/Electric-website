@@ -79,6 +79,9 @@
 	font-size:12px;
 	color:var(--secondary-color);
 }
+.about-sub-heading{
+  font-size:14px;
+}
 .product-icons{
 	display:block;
 	margin:0 auto;
@@ -154,8 +157,8 @@ Category
 
 
   #header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color:  var(--primary-color) !important;
   }
   .bg-light{
@@ -291,9 +294,10 @@ Category
   
 .add-to-cart-btn{
     background-color:var(--secondary-color);
-    padding: 10px;
+    padding: 8px;
     border-radius: 25px;
     color:var(--default-color);
+    font-size:11px;
     border:none;
   }
 
@@ -366,8 +370,11 @@ hr{
 .cart-container {
 	max-width:900px;
     margin: auto;
-    background: var(--default-color);
+    background: var(--primary-color);
     padding: 20px;
+    box-shadow: 0px 0px 0px 1px var( --primary-color);
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .cart-title {
@@ -693,10 +700,12 @@ color: #8D99AE;
 	.about .section-1{
 		border:none;
 	}
-	.about .section-2{
-		border-top:4px solid var(--secondary-color);
-	}
-
+	.about-sub-heading{
+    text-align:center;
+  }
+.company-info-section{
+  display:none;
+}
 	.product-icons i{
 		padding:5px;
 		border-radius:50%;
@@ -712,8 +721,29 @@ color: #8D99AE;
 }
 
 .cart-section .cart-img>img{
-	width:50px;
-	height:50px;
+	width:40px;
+	height:40px;
+}
+.cart-name{
+  font-size:14px;
+}
+.cart-quantity input {
+  width: 30px;
+  text-align: center;
+color:var(--secondary-color);
+}
+
+.cart-price {
+  font-size: 12px;
+  font-weight: bold;
+color:var(--secondary-color);
+}
+
+.cart-remove button {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
 }
 product-main-section .product-image{
   width:200px;
@@ -916,7 +946,7 @@ product-main-section .product-image{
 						
 							<span class="copyright">
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by ElectroMart
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</span>
 						</div>

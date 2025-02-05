@@ -10,37 +10,16 @@
 {% block body  %}
 
 <main>
-    <!-- HOT DEAL SECTION -->
-	<div id="hot-deal" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-
-				<div class="col-md-12">
-					<div class="hot-deal">
-
-						<h2 class="text-uppercase">Welcome to Electro </h2>
-						<p>Login</p>
-						
-					</div>
-				</div>
-
-
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /HOT DEAL SECTION -->
-
-
+    
+	<div class="section">
 <div class="container">
-<div class="row g-3">
-	<div class="col-md-6 offset-md-3">
+<div class="row gy-3">
+	<div class="col-md-5 offset-md-3 form-section shadow-sm">
 	
-	<form method="POST" action="{% url "shop_features:login" %}">
+	<form method="POST" class="form" action="{% url "shop_features:login" %}">
 		{% csrf_token %}
+
+		<h2>Welcome to Electro </h2>
 			<div class="col-md-12">
 			  <label for="username" class="form-label ">Username</label>
 			  <input name="username" type="text" class="form-control" id="username" placeholder="Enter your username" >
@@ -58,6 +37,7 @@
 		  </form>
 	
 
+</div>
 </div>
 </div>
 </div>

@@ -45,6 +45,88 @@
 
 <style>
 
+	:root{
+		--secondary-color: #0D0D0D;
+		--primary-color:#F3F3F3;
+		--default-color:#FFF;
+		--accent-color:#8B8F98;
+	  }
+
+
+body{
+	background-color:var(--default-color);
+}
+
+.form-section {
+	background-color:var(--default-color);
+	border:1px solid var(--secondary-color);
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:40px;
+	padding-bottom:40px;
+	border-radius:10px;
+}
+
+.form-section h2{
+	text-align:center;
+	font-size:25px;
+	color:var(--secondary-color);
+	margin-bottom:9px;
+}
+
+
+.form-control{
+	background-color:var(--default-color) !important;
+	border:1px solid var(--secondary-color);
+	color:var(--secondary-color) !important;
+	border-radius:none !important;
+}
+
+
+
+.form-control:hover{
+	background-color:var(--default-color) !important;
+	border:1px solid var(--secondary-color);
+	color:var(--secondary-color) !important;
+	border-radius:none !important;
+}
+
+
+.form-section button{
+  color:var(--default-color);
+  background-color:var(--secondary-color);
+  padding:10px;
+  padding-right:25px;
+  padding-left:25px;
+  border-radius:5px;
+  border:1px solid var(--secondary-color);
+  margin-top:10px;
+  display:block;
+  margin:0 auto;
+}
+
+
+.form-section button:hover{
+   color:var(--secondary-color);
+  background-color:var(--default-color);
+ 
+}
+
+
+
+#header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:  var(--primary-color) !important;
+  }
+  #header .nav-link{
+	text-transform:underline;
+  }
+  .bg-light{
+    background-color:  var(--primary-color) !important;
+  }
+
+
   
 </style>
 
@@ -54,6 +136,81 @@
 
 
 	
+		<!-- HEADER -->
+<header id="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary text-dark bg-light navbar-section" >
+        <div class="container-fluid navbar-container">
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="#">
+              ElectroMart
+            </a>
+
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- Push links to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" aria-current="page" href="{% url 'shop_features:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{% url 'shop_features:shipping' %}">Shipping</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{% url 'shop_features:store' %}">Store</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Account & Cart Section -->
+            <div class="header-ctn d-flex align-items-center ms-auto"> <!-- Push this section to the right -->
+                <!-- Cart -->
+                <div class="me-3"> <!-- Adds spacing -->
+                    <a href="{% url 'shop_features:cart_summary' %}">
+                        <i class="fa fa-shopping-cart" style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Your Cart</span>
+                        <div class="qty text-light" id="cart_quantity">{{ cart|length }}</div>
+                    </a>
+                </div>
+
+                <!-- Authentication Links -->
+                {% if user.is_authenticated %}
+                <div>
+                    <a href="{% url 'shop_features:logout' %}">
+                        <i class="fa-solid fa-right-from-bracket" style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Logout</span>
+                    </a>
+                </div>
+                {% else %}
+                <div class="me-3">
+                    <a href="{% url 'shop_features:login' %}">
+                        <i class="fa fa-user-o"v style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Login</span>
+                    </a>
+                </div>
+                <div class="me-3">
+                    <a href="{% url 'shop_features:register' %}">
+                        <i class="fa fa-user-o" style="color: #0D0D0D;"></i>
+                        <span class="text-dark">Register</span>
+                    </a>
+                </div>
+                {% endif %}
+
+               
+
+            </div>
+
+
+        </div>
+    </nav>
+</header>
+
+
+
+
 
 	
 

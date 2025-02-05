@@ -10,46 +10,27 @@
 {% block body  %}
 
 <main>
-    <!-- HOT DEAL SECTION -->
-	<div id="hot-deal" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
+    
 
-				<div class="col-md-12">
-					<div class="hot-deal">
-
-						<h2 class="text-uppercase">Welcome to Electro </h2>
-						<p>Register</p>
-						
-					</div>
-				</div>
-
-
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /HOT DEAL SECTION -->
-
+	<div class="section">
 
 <div class="container">
-<div class="row g-3">
-	<div class="col-md-6 offset-md-3">
+<div class="row gy-3">
+	<div class="col-md-6 offset-md-3 form-section">
 	
 	<form method="POST" action="{% url "shop_features:register" %}">
 		{% csrf_token %}
+		<h2 >Create account</h2>
 			
                  {{form.as_p}}
 				
 				 
-				 <button type="submit" class="btn btn-secondary text-center mb-1">Register</button>
+				 <button type="submit" class="btn  text-center mb-1">Register</button>
 
 		  </form>
 	
 
+</div>
 </div>
 </div>
 </div>
