@@ -7,10 +7,32 @@
 
 <main>
 
+
 	<div class="cart-container">
-		<h2 class="cart-title">Your Cart <span>({{cart|length}} items)</span></h2>
+		<div class="row">
+		<div class="col-md-12">
+
+
+		<h2 class="cart-title">Your Cart <span>({{cart|length}} 
+                 {% if cart|length == 0 %}
+				  
+				 no item
+
+				{% elif cart|length == 1 %}
+				item
+
+				{% else %}
+				items
+			 {% endif %}
+
+			
+			
+			)</span></h2>
+
+			<hr>
 	
 		<div class="cart-items">
+			
 			{% for cart_product in cart_products %}
 			<div class="cart-item">
 				<div class="cart-img">
@@ -34,7 +56,7 @@
 	
 				<div class="cart-remove">
 					<button class="btn delete-product" type="button" data-index="{{cart_product.id}}">
-						<i class="fa-solid fa-x"></i>
+						<i class="fa-solid fa-trash"></i>
 					</button>
 				</div>
 			</div>
@@ -48,6 +70,8 @@
 	</div>
 	
 
+</div>
+</div>
 </div>
 
 
