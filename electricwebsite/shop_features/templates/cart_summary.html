@@ -42,13 +42,35 @@
 				<div class="cart-details">
 					<h3 class="cart-name">{{cart_product.name}}</h3>
 					<p class="cart-category">{{cart_product.category}}</p>
-					<a class="cart-update-link">Edit</a>
+					<button type="button" class="cart-update-link update-cart" data-index="{{cart_product.id}}">Edit</button>
 				</div>
 	
-				<div class="cart-quantity">
-					<label>Quantity</label>
-					<input type="number" value="cart_product.id" min="1">
-				</div>
+        
+					<div class="quantity-section product-description-heading">
+						<div>
+							<p class="me-2">Quantity:</p>
+						</div>
+						<div>
+							<select class="form-select ms-2" aria-label="Default select example" id="select{{cart_product.id}}">
+								<option selected>
+									{% for key, value  in quantities.items %}
+									{% if key == cart_product.id|slugify %}
+									{{value}}
+									{% endif %}
+									
+									{% endfor %}
+								</option>
+
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>
+					</div>
+			
+				
 	
 				<div class="cart-price">
 					<b>Ksh</b> {{ cart_product.price }}.00

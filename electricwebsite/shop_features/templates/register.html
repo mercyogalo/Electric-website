@@ -16,12 +16,13 @@
 
 <div class="container">
 <div class="row gy-3">
-	<div class="col-md-6 offset-md-3 form-section">
+	<div class="col-md-5 offset-md-3 form-section shadow-sm">
 	
 	<form method="POST" action="{% url "shop_features:register" %}">
 		{% csrf_token %}
-		<h2 >Create account</h2>
+		  <h2>Create account</h2>
 			
+		
                  {{form.as_p}}
 				
 				 

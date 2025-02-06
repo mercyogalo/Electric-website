@@ -35,6 +35,15 @@
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -49,6 +58,8 @@
 		--primary-color:#F3F3F3;
 		--default-color:#FFF;
 		--accent-color:#8B8F98;
+    --main-font:"Playfair Display", serif;
+    --primary-font:"Poppins", serif;
 	  }
 	  
 	  body {
@@ -65,6 +76,8 @@
 .heading{
 	text-align:center;
 	font-size:40px;
+  font-family:var(--main-font);
+  font-weight:400px;
 }
 .sub-heading{
 	text-align:center;
@@ -418,9 +431,14 @@ hr{
     color:var(--accent-color);
 }
 
-.cart-description {
+.cart-update-link {
     font-size: 12px;
-    color: var(--secondary-color);
+    color: var(--accent-color);
+}
+.cart-update-link:hover {
+  font-size: 12px;
+  color: var(--secondary-color);
+  cursor:pointer;
 }
 .cart-quantity label{
 	color:var(--secondary-color);
@@ -1003,6 +1021,64 @@ product-main-section .product-image{
 					error: function(xhr, errmsg, err){
 						
 					}
+				});
+			})
+			
+
+			$(document).on('click', '.delete-product', function(e){
+				e.preventDefault();
+				// grab the product id
+				//var productid = $(this).data('index');
+			
+				$.ajax({
+				type: 'POST',
+				url: '{% url 'shop_features:cart_delete' %}',
+				data: {
+				  product_id: $(this).data('index'),
+				  csrfmiddlewaretoken: '{{ csrf_token }}',
+				  action: 'post'
+				},
+				success: function(json){
+					//console.log(json)
+					//document.getElementById("cart_quantity").textContent = json.qty
+					location.reload();
+				},
+			
+				error: function(xhr, errmsg, err){
+			
+				}
+			
+			
+				});
+			
+			})
+
+
+
+      
+			$(document).on('click', '.update-cart', function(e){
+				e.preventDefault();
+
+var productid=$(this).data('index');
+
+				$.ajax({
+					type:'POST',
+					url: {% url "shop_features:cart_update" %},
+					data: {
+            product_id: $(this).data('index'),
+            product_qty:$('#selected' + productid + 'option:selected').text(),
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            action: 'post'
+          },
+          success: function(json){
+            //console.log(json)
+            //document.getElementById("cart_quantity").textContent = json.qty
+            location.reload();
+          },
+        
+          error: function(xhr, errmsg, err){
+        
+          }
 				});
 			})
 			
