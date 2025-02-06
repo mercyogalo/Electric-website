@@ -1056,17 +1056,17 @@ product-main-section .product-image{
 
 
       
-			$(document).on('click', '.update-cart', function(e){
+			$(document).on('click', '#update-cart', function(e){
 				e.preventDefault();
 
-var productid=$(this).data('index');
+var productId=$(this).data('index');
 
 				$.ajax({
 					type:'POST',
-					url: {% url "shop_features:cart_update" %},
+					url: {% url 'shop_features:cart_update' %},
 					data: {
             product_id: $(this).data('index'),
-            product_qty:$('#selected' + productid + 'option:selected').text(),
+            product_qty: $('#select' + productId + ' option:selected').text()
             csrfmiddlewaretoken: '{{ csrf_token }}',
             action: 'post'
           },

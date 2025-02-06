@@ -130,10 +130,27 @@ def cart_add(request):
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
 def cart_update(request):
-    pass
+    cart = Cart(request)
+    if request.POST.get('action') == 'post':
+        product_id = int(request.POST.get('product_id'))
+        product_qty = int(request.POST.get('product_qty'))
+        
+        cart.update(product=product_id,quantity=product_qty)
+        
+        return redirect('shop_features:cart_summary')
+    
+    
+    
+    messages.success(request, ("Your Cart Has Been Updated..."))
+    return messages
+
+
+
+    
 
 def cart_delete(request):
     cart = Cart(request)
+    
     
     if request.POST.get('action') == 'post':
         product_id = int(request.POST.get('product_id'))

@@ -42,7 +42,7 @@
 				<div class="cart-details">
 					<h3 class="cart-name">{{cart_product.name}}</h3>
 					<p class="cart-category">{{cart_product.category}}</p>
-					<button type="button" class="cart-update-link update-cart" data-index="{{cart_product.id}}">Edit</button>
+					<button type="button" class="cart-update-link update-cart" id="update-cart"data-index="{{cart_product.id}}">Edit</button>
 				</div>
 	
         
@@ -51,7 +51,7 @@
 							<p class="me-2">Quantity:</p>
 						</div>
 						<div>
-							<select class="form-select ms-2" aria-label="Default select example" id="select{{cart_product.id}}">
+							<select class="form-select ms-2 form-select-sm"  id="select{{cart_product.id}}">
 								<option selected>
 									{% for key, value  in quantities.items %}
 									{% if key == cart_product.id|slugify %}
