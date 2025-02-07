@@ -104,6 +104,13 @@ def product(request,pk):
     return render(request,'product.html',context)
 
 
+def contact(request):
+    return render(request,'contact.html')
+
+def order(request):
+    pass
+
+
 def cart_summary(request):
     cart=Cart(request)
     cart_products=cart.get_prods
@@ -161,5 +168,5 @@ def cart_delete(request):
     
         return response
         
-        
+               
     
