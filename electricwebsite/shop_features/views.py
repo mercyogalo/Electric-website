@@ -105,6 +105,13 @@ def product(request,pk):
 
 
 def contact(request):
+    if request.method=="POST":
+        first_name=request.POST['first-name']
+        last_name=request.POST['last-name']
+        email=request.POST['email']
+        subject=request.POST['subject']
+        return 
+    
     return render(request,'contact.html')
 
 def order(request):

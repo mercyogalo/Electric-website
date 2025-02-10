@@ -64,7 +64,7 @@
 					<div class="contact-details ">
 						
 
-						<form class="contact-form col-md-10  mt-3 mb-3 shadow-lg" method="POST">
+						<form method="POST" class="contact-form col-md-10  mt-3 mb-3 shadow-lg"  action="{% url "shop_features:contact" %}">
 							{% csrf_token %}
 						<div class="form-group col-md-6">
 							<input class="input" type="text" name="first-name" placeholder="First Name">
