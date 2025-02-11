@@ -110,7 +110,10 @@ def contact(request):
         last_name=request.POST['last-name']
         email=request.POST['email']
         subject=request.POST['subject']
-        return 
+        message=request.POST['message']
+        
+        messages.success(request, ("You message has been received succcessfully. Our team will reach out shortly."))
+        return messages
     
     return render(request,'contact.html')
 
