@@ -884,7 +884,7 @@ product-main-section .product-image{
             <div class="header-ctn d-flex align-items-center ms-auto"> <!-- Push this section to the right -->
                 <!-- Cart -->
                 <div class="me-3"> <!-- Adds spacing -->
-                    <a href="{% url 'shop_features:cart_summary' %}">
+                    <a href="{% url 'cart:cart_summary' %}">
                         <i class="fa fa-shopping-cart" style="color: #0D0D0D;"></i>
                         <span class="text-dark">Your Cart</span>
                         <div class="qty text-light" id="cart_quantity">{{ cart|length }}</div>
@@ -1083,7 +1083,7 @@ product-main-section .product-image{
 				e.preventDefault();
 				$.ajax({
 					type:'POST',
-					url: {% url "shop_features:cart_add" %},
+					url: {% url "cart:cart_add" %},
 					data:{
 							product_id:$('#add-cart').val(),
 							product_qty:$('#product_qty option:selected').text(),
@@ -1108,7 +1108,7 @@ product-main-section .product-image{
 			
 				$.ajax({
 				type: 'POST',
-				url: '{% url 'shop_features:cart_delete' %}',
+				url: '{% url 'cart:cart_delete' %}',
 				data: {
 				  product_id: $(this).data('index'),
 				  csrfmiddlewaretoken: '{{ csrf_token }}',
@@ -1139,7 +1139,7 @@ var productId=$(this).data('index');
 
 				$.ajax({
 					type:'POST',
-					url: {% url 'shop_features:cart_update' %},
+					url: {% url 'cart:cart_update' %},
 					data: {
             product_id: $(this).data('index'),
             product_qty: $('#select' + productId + ' option:selected').text()
@@ -1166,7 +1166,7 @@ var productId=$(this).data('index');
 			
 				$.ajax({
 				type: 'POST',
-				url: '{% url 'shop_features:cart_delete' %}',
+				url: '{% url 'cart:cart_delete' %}',
 				data: {
 				  product_id: $(this).data('index'),
 				  csrfmiddlewaretoken: '{{ csrf_token }}',
