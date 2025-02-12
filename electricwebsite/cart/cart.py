@@ -26,6 +26,11 @@ class Cart():
         
         self.session.modified = True
         
+    def total(self):
+        
+        quantities=self.cart
+        
+        
     def __len__(self):
         return len(self.cart)
     
