@@ -1091,8 +1091,7 @@ product-main-section .product-image{
 							action:'post'
 					},
 					success: function(json){
-						document.getElementById("cart_quantity").textContent=json.qty
-						console.log(product_qty)
+						console.log(json)
 					},
 					error: function(xhr, errmsg, err){
 						
@@ -1142,7 +1141,7 @@ var productId=$(this).data('index');
 					url: {% url 'cart:cart_update' %},
 					data: {
             product_id: $(this).data('index'),
-            product_qty: $('#select' + productId + ' option:selected').text()
+            product_qty: $('#select' + productId + ' option:selected').text(),
             csrfmiddlewaretoken: '{{ csrf_token }}',
             action: 'post'
           },
@@ -1159,35 +1158,7 @@ var productId=$(this).data('index');
 			})
 			
 
-			$(document).on('click', '.delete-product', function(e){
-				e.preventDefault();
-				// grab the product id
-				//var productid = $(this).data('index');
-			
-				$.ajax({
-				type: 'POST',
-				url: '{% url 'cart:cart_delete' %}',
-				data: {
-				  product_id: $(this).data('index'),
-				  csrfmiddlewaretoken: '{{ csrf_token }}',
-				  action: 'post'
-				},
-				success: function(json){
-					//console.log(json)
-					//document.getElementById("cart_quantity").textContent = json.qty
-					location.reload();
-				},
-			
-				error: function(xhr, errmsg, err){
-			
-				}
-			
-			
-				});
-			
-			})
-
-
+      
 			</script>
 
 

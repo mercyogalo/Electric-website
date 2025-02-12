@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from cart.cart import Cart
 from . forms import SignUpForm
 from django.http import JsonResponse
 

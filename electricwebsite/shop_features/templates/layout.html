@@ -148,15 +148,23 @@ body{
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- Push links to the right -->
+                    
                     <li class="nav-item">
                         <a class="nav-link active text-dark" aria-current="page" href="{% url 'shop_features:home' %}">Home</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="{% url 'shop_features:shipping' %}">Shipping</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="{% url 'shop_features:store' %}">Store</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{% url 'shop_features:contact' %}">Contact</a>
+                    </li>
+
                 </ul>
             </div>
 
@@ -164,7 +172,7 @@ body{
             <div class="header-ctn d-flex align-items-center ms-auto"> <!-- Push this section to the right -->
                 <!-- Cart -->
                 <div class="me-3"> <!-- Adds spacing -->
-                    <a href="{% url 'shop_features:cart_summary' %}">
+                    <a href="{% url 'cart:cart_summary' %}">
                         <i class="fa fa-shopping-cart" style="color: #0D0D0D;"></i>
                         <span class="text-dark">Your Cart</span>
                         <div class="qty text-light" id="cart_quantity">{{ cart|length }}</div>

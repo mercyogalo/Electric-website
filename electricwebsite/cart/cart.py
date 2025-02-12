@@ -1,4 +1,4 @@
-
+from shop_features.models import Product
 
 class Cart():
     def __init__(self,request):
@@ -41,17 +41,17 @@ class Cart():
         return quantities
     
     
-    def update(self, product, quantity):
-        product_id = str(product.id)
-        product_qty = str(quantity)
+    #def update(self, product, quantity):
+        #product_id = str(product.id)
+      #  product_qty = str(quantity)
         
-        ourCart=self.cart
-        ourCart[product_id]=product_qty
+     #   ourCart=self.cart
+      #  ourCart[product_id]=product_qty
         
-        self.session.modified = True
+      #  self.session.modified = True
         
-        thing=self.cart
-        return thing
+      #  thing=self.cart
+      #  return thing
     
     def delete(self, product):
         product_id = str(product)
