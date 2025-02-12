@@ -112,6 +112,7 @@ def contact(request):
         subject=request.POST['subject']
         message=request.POST['message']
         
+        
         messages.success(request, ("You message has been received succcessfully. Our team will reach out shortly."))
         return messages
     
@@ -119,4 +120,3 @@ def contact(request):
 
 def order(request):
     pass
-
