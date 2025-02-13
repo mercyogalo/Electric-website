@@ -26,7 +26,7 @@ class Cart():
         
         self.session.modified = True
         
-    def total(self):
+    def cart_total(self):
         product_ids=self.cart.keys()
         products=Product.objects.filter(id__in=product_ids)
         quantities=self.cart
