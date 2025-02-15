@@ -34,9 +34,15 @@ class Cart():
         
         for key, value in quantities.items():
             key=int(key)
+            value=int(value)
             for product in products:
                 if product.id==key:
-                    total+=(product.price*value)
+                    if product.is_sale:
+                        total+=(product.sale_price*value)
+                    else:
+                         total+=(product.price*value)
+                    
+        return total
         
     def __len__(self):
         return len(self.cart)

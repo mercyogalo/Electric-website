@@ -73,7 +73,13 @@
 				
 	
 				<div class="cart-price">
-					<b>Ksh</b> {{ cart_product.price }}.00
+					<b>Ksh</b> 
+					{% if cart_product.is_sale %}
+					{{ cart_product.sale_price }}.00
+					{% else %}
+						{{ cart_product.price }}.00
+					{% endif %}
+					
 				</div>
 	
 				<div class="cart-remove">
