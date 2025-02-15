@@ -36,7 +36,7 @@ class Cart():
             key=int(key)
             for product in products:
                 if product.id==key:
-                    total=total+(product.price*value)
+                    total+=(product.price*value)
         
     def __len__(self):
         return len(self.cart)
@@ -57,8 +57,8 @@ class Cart():
         product_id = str(product.id)
         product_qty = str(quantity)
         
-        ourCart=self.cart
-        ourCart[product_id]=product_qty
+        if product_id in self.cart:
+            self.cart[product_id] = product_qty
         
         self.session.modified = True
         

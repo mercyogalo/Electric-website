@@ -1111,7 +1111,7 @@ var productid=$(this).data('index');
 					url: {% url 'cart:cart_update' %},
 					data: {
             product_id: $(this).data('index'),
-            product_qty: $(`#select` + productid + ` option:selected`).text(),
+            product_qty: $(`#select` + productid).val(),
             csrfmiddlewaretoken: '{{ csrf_token }}',
             action: 'post'
           },
