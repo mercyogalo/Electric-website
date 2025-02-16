@@ -4,15 +4,15 @@ from django.contrib.auth.models import User
 # Create your models here.
 class ShippingAddress(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
-    first_name=models.CharField(max_length=255)
-    last_name=models.CharField(max_length=255)
-    email=models.EmailField( max_length=255)
-    phone=models.CharField( max_length=255)
-    address1=models.CharField(max_length=255)
-    address2=models.CharField(max_length=255)
-    city=models.CharField( max_length=255)
-    zipcode=models.CharField(max_length=255, null=True,blank=True)
-    country=models.CharField( max_length=255, null=True,blank=True)
+    shipping_first_name=models.CharField(max_length=255)
+    shipping_last_name=models.CharField(max_length=255)
+    shipping_email=models.EmailField( max_length=255)
+    shipping_phone=models.CharField( max_length=255)
+    shipping_address1=models.CharField(max_length=255)
+    shipping_address2=models.CharField(max_length=255)
+    shipping_city=models.CharField( max_length=255)
+    shipping_zipcode=models.CharField(max_length=255, null=True,blank=True)
+    shipping_country=models.CharField( max_length=255, null=True,blank=True)
     
     class  Meta:
         verbose_name_plural = 'Shipping Address'
