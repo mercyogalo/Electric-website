@@ -45,7 +45,7 @@ def laptop(request):
 
 def login_user(request):
     context={
-        "messages": messages
+    
     }
     if request.method=="POST":
         username=request.POST['username']
@@ -73,7 +73,6 @@ def register_user(request):
     form=SignUpForm()
     context={
         "form": form,
-        "messages": messages
     }
     if request.method=="POST":
         form=SignUpForm(request.POST)
