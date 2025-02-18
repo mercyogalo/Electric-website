@@ -97,7 +97,12 @@
 	
 		<div class="cart-footer">
 			<a href="{% url "shop_features:store" %}" class="continue-shopping">Continue Shopping</a>
+
+			{% if user.is_authenticated %}
 			<a href="{% url "payment:shipping" %}"    class="checkout-btn">Proceed to Checkout</a>
+			{% else %}
+			
+			{% endif %}
 		</div>
 	</div>
 	

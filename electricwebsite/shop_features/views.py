@@ -109,3 +109,7 @@ def contact(request):
 
 def order(request):
     pass
+
+
+def profile(request):
+    return render(request,'profile.html')
